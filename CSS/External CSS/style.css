@@ -1,0 +1,14 @@
+.paragraph1 {
+    color: aqua;
+    background-color: burlywood;
+} /* This will set color as "aqua" and background color as "burlywood" for element with class "paragraph1" */
+
+.paragraph2 {
+    color: cornflowerblue;
+    background-color: gainsboro;
+} /* This will set color as "cornflowerblue" and background color as "gainsboro" for element with class "paragraph2" */
+
+#paragraph3 {
+    color: white;
+    background-color: black;
+} /* This will set color as "white" and background color as "black" for element with ID "paragraph3" */
