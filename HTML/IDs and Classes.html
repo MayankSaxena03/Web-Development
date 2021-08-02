@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDs and Classes</title>
+     <!-- Putting a CSS code to demonstrate use case of IDs and Classes. Learn about CSS in CSS folder :)-->
+     <style>
+        #top {
+            background-color: #ccc;
+            padding: 20px
+        }
+
+        .intro {
+            color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body> 
+    <!-- The HTML refers to the CSS by using the attributes id and class. -->
+    <div id="top"> <!-- We created a div with id top. We cannot provide this id to another element now. In CSS all the changes in #top will be applied to this div only-->
+        <h1>Chocolate curry</h1>
+        <!-- Below we are making two paragraphs with same class name and in CSS all the changes in .intro will be applied to these paragraphs. -->
+        <p class="intro">This is my recipe for making curry purely with chocolate</p>
+        <p class="intro">Mmm mm mmmmm</p>
+    </div>
+    <!-- The difference between an ID and a class is that an ID can be used to identify one element, 
+        whereas a class can be used to identify more than one. -->
+</body>
+
+</html>
