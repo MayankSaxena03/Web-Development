@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Webpage Crawler</title>
+</head>
+<body>
+    Task : To find out all the links in ap page that consist of a given string. 
+    For example : If we are given a string 'mayank', we need to find all the links on webpage that consist of Mayank.
+    
+    <!--We will create sample links to search required links among them-->
+    <a href="https://www.python.org/"></a>
+    <a href="https://en.wikipedia.org/wiki/Python_(programming_language)"></a>
+    <a href="https://www.java.com/"></a>
+    <a href="https://www.oracle.com/java/technologies/"></a>
+    <a href="https://www.w3schools.com/java/"></a>
+    <a href="https://www.programiz.com/c-programming"></a>
+    <a href="https://www.learn-c.org/"></a>
+    <a href="https://www.w3schools.com/cpp/"></a>
+    <a href="https://www.programiz.com/cpp-programming"></a>
+    <a href="https://isocpp.org/"></a>
+</body>
+<script>
+    let str = 'python'; //We will search links for python
+    let arr = document.links;
+    console.log('All links' , '\n', arr);
+
+    console.log('\n');
+
+    console.log(`Links that have ${str} in it`);
+    
+    Array.from(arr).forEach(function(element) {
+        //We will use if condition to check that link contains our given string or not.
+        /* We used .toLowerCase method so we can also find out links which have consist of our given text in uppercase or mixed. 
+           For example our wikipedia python link has text Python. If we do not use .toLowerCase() our condition will be false for that link. python!=Python
+        */   
+        if(element.href.toLowerCase().includes(str)) {
+            console.log(element);
+        }
+    });
+</script>
+</html>

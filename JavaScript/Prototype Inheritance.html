@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prototype Inheritance in JavaScript</title>
+</head>
+<body>
+    Prototype Inheritance in JavaScript
+</body>
+<script>
+    console.log('Prototype Inheritance in JavaScript'); 
+    console.log('Student1');
+    let student1 = {
+        name: 'Mayank',
+        roll: 38,
+        branch: 'IT',
+        study() {
+            console.log(`${this.name} is now studying`);
+        },
+        changeRoll(newRoll) {
+            this.roll = newRoll;
+        }
+    };
+    console.log(student1);
+
+    console.log('\n');
+
+    console.log('Student2');
+    let student2 = Object.create(student1); //This will create a new object student2 by taking student1 as a prototype.
+    console.log(student2); //This will log {}. We can check prototypes of it and they are same as student1 object and its methods.
+    student2.name = "Harsh";
+    student2.roll = 18;
+    student2.branch = "ISE";
+    console.log(student2); //This will log student2 with all defined properties. 
+    student2.study(); //We can access methods of student1 as student2 took student1 as a prototype
+    student2.changeRoll(34);
+    console.log(student2);
+
+    console.log('\n');
+    
+    //We could have initialized student2 object in below given way too
+    console.log('Student 3');
+    let student3 = Object.create(student1, {
+        name: {value: 'Harshu'},
+        roll: {value: 28, writable: true},
+        branch: {value: 'CS'}
+    }); //writable: true will allow us to change value of roll number. If we don't write "writable: true" then we won't be able to change value of object
+    console.log(student3);
+    student3.changeRoll(21);
+    console.log(student3);
+
+    console.log('\n');
+
+    //Protoypal Inheritance
+    //Creating an Employee constructor
+    function Employee(name, age, salary) {
+        this.name = name;
+        this.age = age;
+        this.salary = salary;
+    }
+    Employee.prototype.info = function() {
+        console.log(`${this.name} is earning ${this.salary} bucks per month at an age of ${this.age}`);
+    };
+
+    //Creating Employee object
+    console.log('Employee 1');
+    let employee1 = new Employee("Mayank Saxena", 20, 90000);
+    console.log(employee1);
+    employee1.info(); //Calling method
+
+    console.log('\n');
+
+    //Creating Intern object constructor. We will inherit things from employee that are common(like name, age, salary) and add other things
+    function Intern(name, age, salary, programming) {
+    Employee.call(this, name, age, salary); //Inheriting properties from Employee
+    this.programming = programming;
+    };
+
+    //This will set prototype of Intern equal to Employee
+    Intern.prototype = Object.create(Employee.prototype);
+
+    //Manually setting the constructor
+    Intern.prototype.constructor = Intern;
+
+    //Creating Intern object
+    console.log('Intern 1')
+    let intern1 = new Intern("Harsh", 19, 65000, "C++");
+    console.log(intern1);
+    intern1.info(); //We have set the prototype of Intern equal to Employee which is allowing us to use this method
+</script>
+</html>

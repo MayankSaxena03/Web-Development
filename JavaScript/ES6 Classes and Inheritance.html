@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ES6 Classes and Inheritance</title>
+</head>
+<body>
+    ES6 Classes and Inheritance
+</body>
+<script>
+    console.log('ES6 Classes and Inheritance');
+    //Classes are a template for creating objects. They encapsulate data with code to work on that data.  
+
+    console.log('\n');
+
+    //Creating Employee Class
+    class Employee {
+        //Whenever we create an object constructor is called first and it is commonly use to initialize the variables.
+        constructor(name, age, salary) {
+            this.name = name;
+            this.age = age;
+            this.salary = salary;
+        }
+        info() {
+            console.log(`${this.name} is earning ${this.salary} bucks per month at an age of ${this.age}`);
+        } //Class Method
+        static add(a, b) {
+            return a+b;
+        } //Static Method can be accessed without creating any objects of its class. We don't use class variable in these methods like this.name
+    }
+
+    //Employee Object
+    console.log('Employee Object');
+    let mayank = new Employee("Mayank", 20, 3000000);
+    console.log(mayank);
+    mayank.info();
+    console.log(Employee.add(5,3)); //Static Method do not require an object of class to be called.
+
+    console.log('\n');
+
+    //Inheriting properites to Intern class from Employee class. We use "extends" for inheriting a class.
+    class Intern extends Employee {
+        constructor(name, age, salary, programming) {
+            super(name, age, salary); //This calls constructor of Employee class to initialise inherited properties
+            this.programming = programming;
+        }
+        language() {
+            console.log(`${this.name} is doing internship in ${this.programming} at a stipend of ${this.salary}`);
+        }
+        static multiply(a, b) {
+            return a*b;
+        }
+    }
+
+    //Intern Object
+    console.log('Intern Object');
+    let harsh = new Intern("Harsh", 19, 2500000, "JavaScript"); //We are able to use name, age, salary in Intern object because we have inherited these properties from Employee class
+    console.log(harsh);
+    harsh.language(); 
+    console.log(Intern.multiply(5,3)); //Calling static method
+</script>
+</html>

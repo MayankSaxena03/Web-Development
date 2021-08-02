@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Prototype in JavaScript</title>
+</head>
+
+<body>
+    Object Prototype in JavaScript
+</body>
+
+<script>
+    console.log('Object Prototype in JavaScript');
+    //Prototypes are the mechanism by which JavaScript objects inherit features from one another.
+    //Creating object through object Literal
+    let obj = {
+        name: 'Maruti Suzuki',
+        speed: 120,
+        cost: 1000000
+    };
+    console.log(obj);
+    //You would have seen __proto__ in console after object properties. This include some predeifined methods we can apply on our object
+
+    function Student(givenName) {
+        this.name = givenName;
+    }
+    //Creating a prototype method for Student type objects. This method will be applied to all students object
+    Student.prototype.getName = function() {
+        return this.name;
+    }
+    Student.prototype.setName = function(newName) {
+        this.name = newName;
+    }
+    let student = new Student("Mayank");
+    console.log(student);
+    console.log(student.getName()); //This will return name of object. In this case it should return Mayank
+    student.setName("Harsh"); //This will change the name of Student object to Harsh.
+    console.log(student.getName()); //This will return name of object. In this case it should return Harsh
+    /* Object.prototype.sayHello = function() {
+        return 'Hello';
+    } */
+    //Above block of commented code will apply this method prototype to all types of objects in program. It is not recommended to do so.
+</script>
+
+</html>

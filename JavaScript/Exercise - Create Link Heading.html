@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating a link heading in JavaScript</title>
+</head>
+<body>
+    Task : Create a link heading. We need to create a heading that is link with JavaScript
+    Example : There is a heading Go To Google which redirect to google.com
+</body>
+<script>
+    console.log('Creating a link heading');
+    //Creating link element
+    let element = document.createElement('a');
+    console.log(element);
+    element.setAttribute('href', '//google.com');
+    element.id = "myLink";
+    //Creating heading element
+    let element2 = document.createElement('h1');
+    element2.innerText = 'Go To Google';
+    element.appendChild(element2); //Inserting heading in link
+    console.log(element);
+    document.querySelector('body').appendChild(element); //Inserting link with heading in body
+</script>
+</html>

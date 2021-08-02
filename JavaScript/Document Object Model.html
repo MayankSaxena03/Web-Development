@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Object Model</title>
+</head>
+<body>
+    Document Object Model (DOM) in JavaScript
+    <div class="container">
+        <div class="child">child 1</div>
+        <div class="child">child 2</div>
+        <div class="child">child 3</div>
+        <div class="child">child 4</div>
+        <form action="#">
+            Seach here <input type="text" name="" id="">
+            <input type="button" value="submit">
+        </form>
+        <a href="//google.com">Go to Google</a>
+        <a href="//facebook.com">Go to facebook</a>
+        <img src="https://source.unsplash.com/random/100x100" alt="">
+    </div>
+</body>
+<script>
+    console.log('Document Object Model (DOM) in JavaScript');
+    // Document is an object which is a structural representation of our HTML
+    let a = document;
+    console.log(a); // Will log the representation of our HTML
+
+    console.log('\n');
+
+    a = document.all; //Will store all the collection of tags present in our HTML document in 'a'. Don't confuse it with an Array
+    console.log(a);
+
+    console.log('\n');
+
+    //If we try to use forEach in 'a' to access all elements one by one we willget an error because 'a' is not an array
+    /* a.forEach(function(elements) {
+        console.log(elements);
+    }); */
+    // Above forEach won't run because 'a' is not an array To solve this we can use Array.from() as shown below
+    Array.from(a).forEach(function(elements) {
+        console.log(elements);
+    }); 
+    // Array.from(a) will make an array with the help of 'a' and forEach will iterate over our HTML document which gives us access to every element of our HTML document.
+
+    console.log('\n');
+
+    a = document.body; //Will return all the document present in body tag of our HTML.
+    console.log(a);
+
+    console.log('\n');
+
+    a = document.forms; //Will return all the forms present in HTML
+    console.log(a);
+    a = document.forms[0]; //We can get info of a particular form like this. We have 1 form so we used index 0 to get info of that
+    console.log(a);
+
+    console.log('\n');
+
+    a = document.links; //Will return all the links present in HTML
+    console.log(a);
+    a = document.links[0]; //Will return info of first link in HTML
+    console.log(a);
+    a = document.links[1].href; //Will return second link in HTML
+    console.log(a);
+
+    console.log('\n');
+
+    a = document.scripts; //Will return all the scripts present in our website
+    console.log(a);
+    a = document.scripts[1]; //Will return the second script of our website. (In VS code live server index 0 is taken by live server script)
+    console.log(a);
+
+    console.log('\n');
+
+    a = document.images; //Will return all the images present in our website
+    console.log(a);
+    a = document.images[0]; //Will return the first image present in our website
+    console.log(a);
+</script>
+</html>

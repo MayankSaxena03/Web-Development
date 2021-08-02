@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Type Conversion and Coercion in JavaScript</title>
+</head>
+<body>
+    Type Conversion and Coercion in JavaScript
+</body>
+<script>
+    // Type Conversion
+    let myVar;
+    myVar = 34;
+    console.log(myVar, (typeof myVar));
+    myVar = String(34); /* This will change the integer 34 to string and store it in myVar, making it a String variable. */
+    console.log(myVar, (typeof myVar));
+
+    let booleanVar = true;
+    console.log(booleanVar, (typeof booleanVar));
+    booleanVar = String(true); /* This will convert the boolean value to String. In this case boolean value true will be converted to String "true". */
+    console.log(booleanVar, (typeof booleanVar));
+
+    let myArr = [1,2,3,4,5];
+    console.log(myArr, (typeof myArr));
+    myArr = String([1,2,3,4,5]); /*This will convert this array to String.*/
+    console.log(myArr, (typeof myArr));
+
+    let stri = "1234";
+    console.log(stri, (typeof stri));
+    stri = Number("1234"); /*This will convert the given String to Number.*/
+    console.log(stri, (typeof stri));
+    stri = Number("123d4"); /* This is not a number. It will return NaN when printed or logged */
+    console.log(stri, (typeof stri)); /*This will return NaN (Not a Number).*/
+    stri = Number(true); /* This will convert the given Boolean to Number. If Boolean is true then the converted number is 1 and if false then the converted number is 0. */
+    console.log(stri, (typeof stri));
+    stri = Number([1,2,3]); /* This is not a number. It will return NaN when printed or logged */
+    console.log(stri, (typeof stri)); /*This will return NaN (Not a Number).*/
+
+    let number = '123.456';
+    console.log(number, (typeof number));
+    number = parseInt('123.456'); /* This will convert string "123.456" to Integer which is 123 */
+    console.log(number, (typeof number));
+    number = parseFloat('123.456'); /* This will convert string "123.456" to Float Number which is 123.456 */
+    console.log(number, (typeof number));
+
+    console.log(number.toFixed(2)); /*Will return number with specified number of decimal places. In this case 2 decimal places will appear. If left blank then it will return Integral part of number.*/
+
+
+    // Type Coercion 
+    
+    let number1 = '245';
+    let number2 = 128;
+    console.log(number1 + number2); /* This will convert number2 to String and concat number1 to number2. */
+    console.log(Number(number1)+ number2); /* This will add both the numbers */
+</script>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions in JavaScript</title>
+</head>
+
+<body>
+    Functions in JavaScript
+</body>
+<script>
+    console.log('Functions in JavaScript');
+    // A JavaScript function is a block of code designed to perform a particular task.
+    // A JavaScript function is executed when "something" invokes it(calls it).
+    //Creating a function 
+    function greet(name) {
+        console.log(`Good Morning! ${name}`);
+    }
+    //Calling a function
+    greet('Mayank'); //We do not have to write code again if we have to perform the same task for different name.
+    greet('Harsh');
+
+    //function with multiple parameters and return
+    console.log('Functions with multiple parameters and return');
+    function add(num1, num2 = 5) {
+        return num1+num2;
+    }
+    let val = add(5,9); //val will store the value that is returned by the function add
+    console.log(val);
+    val = add(5); //It will pass 5 as a parameter num1 in function add. As we have not passed parameter for num2, num2 will store default value provided that is 5.
+    console.log(val);
+
+    //Function in variable
+    console.log('Function in variable');
+    //Creating a Function
+    const multiply = function(num1, num2) {
+        return num1*num2;
+    }
+    //Calling function
+    val = multiply(7, 8); //val will store the returned value of multiply variable
+    console.log(val);
+
+    //Function in object
+    console.log('Function in object');
+    //Creating Function within object
+    const myobj = {
+        name: 'Mayank',
+        game: function() {
+            return 'GTA';
+        }
+    };
+    console.log(myobj.game()); //Will log the value returned by function in game
+
+    //Variable Scope
+    console.log('Variable Scope');
+    //Creating 2 variables a & b
+    let a = 9;
+    let b = 7;
+    console.log('Value of a : ', a, 'Value of b : ',b);
+    function showNum() {
+        let a = 4; //We have declared 'a' here, so we have created a block level variable in this function. Changes applied in this a won't be applied to outside 'a'.
+        b = 9; //We have not declared b here. Changes applied to this 'b' will be applied to 'b' outside this function block.
+        console.log('Value of a : ', a, 'Value of b : ',b);
+    }
+    showNum(); //Calling function
+    console.log('Value of a : ', a, 'Value of b : ',b); //Value of 'a' will remain as it was before calling the function. Value of 'b' will be same as that was in function
+</script>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alert and Console Logs in JavaScript</title>
+</head>
+<body>
+    Alert and Console Logs in JavaScript
+</body>
+<script>
+    console.time('Code Runtime'); /* This will calculate time taken by the code (Between this and timeEnd) to execute */
+    console.log('Hello Console'); /* This will log the text 'Hello Console' in Console */
+    console.log(3); /* This will log the integer 3 in Console. */
+    console.log(44+25); /* This will log the addition of two integers 44 & 25 which is 69 in Console. */
+    console.log(true); /* This will log the boolean true in console. */
+    console.log([3,6,9,12]); /* This will log the array with 4 elements (3,6,9,12) in Console. */
+    console.log({name: 'Mayank', marks: 100}); /* This will log an object with given properties in Console. */
+    console.table({name: 'Mayank', marks: 100}); /* This will log an object in table format with given properties in Console. */
+    console.warn('This is a warning'); /* This will create a warning in console */
+    console.assert(243<138, 'This is false'); /* This will show an error if the condition(243<138) given is false. */
+    console.timeEnd('Code Runtime'); /* This will log the time taken to execute above code. */
+    // console.clear(); method clears the console screen
+    // alert('This is an alert'); This will create an alert with text "This is an alert"
+</script>
+</html>

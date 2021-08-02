@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Removing and Replacing Elements</title>
+</head>
+<body>
+    Creating Removing and Replacing Elements
+    <div class="container">
+        <div class="child" id="firstDiv">
+            child 1
+            <ul class="unorderedList" id="myUl">
+                <li class="list-item">This</li>
+                <li class="list-item" id="secondListItem">is</li>
+                <li class="list-item" id="thirdListItem">a</li>
+                <li class="list-item">list</li>
+            </ul>
+        </div>
+        <!--This is a comment-->
+        <div class="child">child 2</div>
+        <div class="child">child 3</div>
+        <div class="child">child 4</div>
+        <form action="#">
+            Seach here <input type="text" name="" id="">
+            <input type="button" value="submit">
+        </form>
+        <a href="//google.com">Go to Google</a>
+        <a href="//facebook.com">Go to facebook</a>
+    </div>
+    <br>
+    <br>
+    <div class="dummy" id="dummyDiv1">This is dummy div 1</div>
+    <div class="dummy" id="dummyDiv2">This is dummy div 2</div>
+    <div class="dummy" id="dummyDiv3">This is dummy div 3</div>
+</body>
+<script>
+    console.log('Creating Removing and Replacing Elements');
+
+    console.log('\n');
+
+    //Creating element
+    let element = document.createElement('li');
+    console.log(element);
+
+    console.log('\n');
+
+    //Adding class, ID and attribute 
+    console.log('Adding class, ID and attribute ');
+    element.className = 'list-item'; //This will add class to our element
+    element.id = 'createdLi'; //This will add ID to our element
+    element.setAttribute('title', 'myTitle'); //This will add title attribute in our list element
+    console.log(element);
+
+    console.log('\n');
+
+    //Adding Text in list item
+    console.log('Adding Text in list item');
+    element.innerText = 'This list item is created by JavaScript'; 
+    console.log(element);
+    //We can also use inner HTML if we want to apply tags in our HTML like <strong>
+    // We can also do this without using innerText or innerHTML by using createTextNode as shown in below commented lines
+    /* let text = document.createTextNode('This list item is created by JavaScript');
+       element.appendChild(text);
+    */
+    // document.createTextNode creates a text node with text given in parameters.
+
+    console.log('\n');
+
+    //Appending element in our unordered list with class unorderedList
+    console.log('Appending element in our unordered list with class unorderedList');
+    let ul = document.querySelector('.unorderedList'); //This will select ul with class unorderedList
+    ul.appendChild(element); //This will place element as child of our ul
+    console.log(ul); //This ul will now consist of our element
+
+    console.log('\n');
+
+    //Replace element
+    console.log('Replacing element');
+    let elem2 = document.createElement('h4');
+    elem2.className = 'list-item';
+    elem2.id = 'list-heading';
+    let text2 = document.createTextNode('This is heading');
+    elem2.appendChild(text2);
+    console.log(elem2);
+    // element.replaceWith(elem2); This will replace our element with elem2
+    //We can replace any element in our HTML as shown below
+    document.getElementById('dummyDiv1').replaceWith(elem2); //This will replace element with ID dummyDiv1 by elem2
+    console.log(document.getElementById('list-heading')); //elem2 has replaced dummyDiv1
+
+    console.log('\n');
+
+    // Replacing Child
+    console.log('Replacing Child');
+    let elem3 = document.createElement('li');
+    elem3.innerText = 'I replaced second child';
+    ul.replaceChild(elem3, document.getElementById('secondListItem')); //This will replace secondListItem by elem3
+    //secondListItem should be child of ul to use this function else we will get an error
+
+    console.log('\n');
+
+    //Remove Child
+    console.log('Removing Child');
+    ul.removeChild(document.getElementById('thirdListItem')); //This will remove thirdListItem
+    //thirdListItem should be child of ul to use this function else we will get an error
+
+    console.log('\n');
+
+    //Getting info
+    console.log('Getting info of our elements');
+    console.log(elem2);
+    console.log('Class : ', elem2.getAttribute('class')); //Will return the value of attribute of element. If attribute is not present it will return null
+    console.log('ID : ', elem2.getAttribute('id'));
+    console.log('href : ', elem2.getAttribute('href'));
+    console.log('Does elem2 have Class : ', elem2.hasAttribute('class')); //Will return a boolean by checking if the element has provided attribute or not
+    console.log('Does elem2 have ID : ', elem2.hasAttribute('id'));
+    console.log('Does elem2 have href : ', elem2.hasAttribute('href'));
+
+    console.log('\n');
+
+    //Removing attributes
+    console.log('Removing attributes');
+    elem2.removeAttribute('id'); //This will remove ID attribute from elem2
+    console.log(elem2);
+</script>
+</html>

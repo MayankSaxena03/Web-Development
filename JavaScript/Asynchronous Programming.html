@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asynchronous Programming in JavaScript</title>
+</head>
+
+<body>
+    Asynchronus Programming in JavaScript
+</body>
+<script>
+    console.log('Asynchronus Programming in JavaScript');
+
+    console.log('\n');
+
+    // Synchronus Programming
+    console.log('Synchronus Programming');
+    /*  As the name suggests synchronous means to be in a sequence, i.e. every statement of the code gets executed one by one. 
+    So, basically a statement has to wait for the earlier statement to get executed. */
+    for (let index = 0; index < 10; index++) {
+        console.log(index);
+    }
+    console.log('Done Printing');
+
+    //Above code will first run for loop and after that it will log "Done Printing" in the console. Code is running line by line
+
+    console.log('\n');
+
+    // Asynchronus Programming
+    console.log('Asynchronus Programming');
+    /* Asynchronous code allows the program to be executed immediately where the synchronous code will block 
+    further execution of the remaining code until it finishes the current one. 
+    This may not look like a big problem but when you see it in a bigger picture you realize that it may lead 
+    to delaying the User Interface. */
+    setTimeout(() => {
+        for (let index = 0; index < 10; index++) {
+            console.log(index);
+        }
+    }, 2000);
+    console.log('Done Printing');
+
+    //Above code will first log "Done Printing in console and the code in timeout will run 2000ms or 2 seconds later"
+</script>
+
+</html>

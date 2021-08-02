@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strings in JavaScript</title>
+</head>
+<body>
+    Strings in JavaScript
+</body>
+<script>
+    console.log(`Hello There, learner`);
+    const greet = 'Hello!';
+    const name = 'Mayank';
+    console.log(greet + ' ' + name); //This will log Hello! Mayank in console.
+
+    let htmlText;
+    htmlText = "<h1> This is heading</h1>" + 
+           "<p> This is My para</p>";
+    console.log(htmlText);
+    htmlText = htmlText.concat('We', ' are', ' concatinating'); //We did add 3 strings in our htmlText. We can concat as many strings as we want.
+    console.log(htmlText); //The 3 words will be added to our string as we concatenated them above.
+    
+    console.log(htmlText.length); //This will return and log the length of string htmlText
+
+    console.log(htmlText.toLowerCase()); //This will return and log the htmlText in lower case
+    console.log(htmlText.toUpperCase()); //This will return and log the htmlText in UPPER case
+    //Above functions do not change the actual value of variable. They just return the evaluated value and we can either store them or use for other operations.
+
+    console.log(htmlText[1]); //This function will return the character of htmlText at index 1.
+    console.log(htmlText.charAt(3)); //This function will return the charater of htmlText at index 3.
+    console.log(htmlText.indexOf('h')); //This function will return the index of first occurence of given character in String. If the character is not present in string then it returns -1.
+    console.log(htmlText.lastIndexOf('h')); //This function will return the index of last occurence of given character in String. If the character is not present in string then it returns -1.
+
+    console.log(htmlText.startsWith('<h1>')); //This function will return a boolean. It will be true if string starts with "<h1>", else false.
+    console.log(htmlText.endsWith('absdsa')); //This function will return a boolean. It will be true if string ends with "absdsa", else false.
+
+    console.log(htmlText.includes('abcd')); //This function will return a boolean. It will be true if string consists a substring "abcd", else false.
+    
+    console.log(htmlText.substring(1,15)); //This will return a substring of htmlText from index 1 to index 15. Substring will have 14 characters from index 1 to index 14 in this case.
+
+    console.log(htmlText.slice(1,15)); //This will return a substring of htmlText from index 1 to index 15. Substring will have 14 characters from index 1 to index 14 in this case.
+    console.log(htmlText.slice(-8, 0)); //This will return a substring of htmlText from 8th index from the end of string to last index. In this way slice() is different from substring().
+    
+    console.log(htmlText.split('>')) //This will split the string to different substrings taking '>' as the break point. We can use ' ' to store the words from a sentence. If we leave it blank, every character will be stored in different substrings.
+    
+    console.log(htmlText.replace('This', 'It')); //This will replace the first occurence of substring 'This' from htmlText to 'It'.
+    
+    let text1 = 'HTML';
+    let text2 = 'CSS';
+    let finalText = `<h1>Hello! ${name}</h1>
+                <p>You like " ${text1} and ${text2} ".</p>`;
+    // In above statements we are able to use " and are able to write text in next line because we wrote text in ``. ` key is above Tab bar and below esc key.
+    document.body.innerHTML = finalText; //This will update the body and place HTML code wriiten in variable finalText.
+</script>
+</html>

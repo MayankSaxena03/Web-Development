@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events and Event Object in JavaScript</title>
+</head>
+<body>
+    Events and Event Object in JavaScript
+    <h2 class="heading red max" id="myHeading">This is a heading. Click me</h2>
+    <h3 class="blue" id="myHeading2">This is heading 2. Hover Over Me!</h2>
+</body> 
+<script>
+    console.log('Events and Event Object in JavaScript');
+    document.getElementById('myHeading').addEventListener('click', function(e) {
+        //Below commands will trigger when we click element
+        console.log('You have clicked the Heading');
+        console.log(e); //This will display details like offset, layer, client X & Y, target, etc.
+        console.log('Target : ', e.target); //Will display the target
+        console.log('Class Name : ', e.target.className); //Will return the value of class
+        console.log('Class Name : ', e.target.classList); //Will return all the classes in list format 
+        console.log('ID : ', e.target.id); //will return ID of element
+        console.log('Offset X : ', e.offsetX); //This will return position of click on X-axis in respect to element 
+        console.log('Offset Y : ', e.offsetY); //This will return position of click on Y-axis in respect to element 
+        console.log('Client X : ', e.clientX); //This will return position of click on X-axis in respect to browser window
+        console.log('Client Y : ', e.clientY); //This will return position of click on Y-axis in respect to browser window
+        //We can do different tasks on click, like redirecting to a new page as shown below
+        // location.href = '//google.com';
+    });
+
+    //We can perform task on events other than click like hover
+    document.getElementById('myHeading2').addEventListener('mouseover', function(e) {
+        console.log('You hovered over second heading');
+        //You can perform all the tasks you can perform on click event.
+    });
+</script>
+</html>

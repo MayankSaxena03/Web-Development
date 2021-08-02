@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date and Time in JavaScript</title>
+</head>
+<body>
+    Date and Time in JavaScript
+</body>
+<script>
+    console.log('Date and Time in JavaScript');
+    let today = new Date();
+    console.log(today);
+    console.log(typeof today);
+
+    console.log('\n');
+
+    //Creating another Date object
+    console.log('Creating another Date object');
+    //Syntax of Date is MM/DD/YYYY
+    let otherDate = new Date('03-03-2001 07:05:09');
+    console.log(otherDate);
+    otherDate = new Date('March 03 2001'); //This will set time to 00:00:00 by default
+    console.log(otherDate);
+    otherDate = new Date('03/03/2001'); //This will set time to 00:00:00 by default
+    console.log(otherDate);
+    otherDate = new Date('03-03-2001 07:05:09');
+
+    console.log('\n');
+
+    //Get Functions
+    console.log('Get Functions (Returns Value)');
+    console.log('Year : ', otherDate.getFullYear());
+    console.log('Month : ', otherDate.getMonth()-1); //getMonth() is 0 based. So it will start counting from 0. january=0, february=1,....december=11
+    console.log('Date : ', otherDate.getDate());
+    console.log('Day : ', otherDate.getDay()); //Return day number of weekday. In this case it will return 6 as Saturday is 6th day of the week
+    console.log('Hours : ', otherDate.getHours());
+    console.log('Minutes : ', otherDate.getMinutes());
+    console.log('Seconds : ', otherDate.getSeconds());
+    console.log('Milliseconds : ', otherDate.getMilliseconds());
+
+    console.log('\n');
+
+    //Set functions
+    console.log('Creating new Date : 08/24/1972 02:30:00')
+    let newDate = new Date();
+    newDate.setFullYear(1972);
+    newDate.setMonth(08-1); //setMonth() is 0 based. So it will start counting months from 0
+    newDate.setDate(24);
+    newDate.setHours(02);
+    newDate.setMinutes(30);
+    newDate.setSeconds(00);
+    console.log(newDate);
+</script>
+</html>

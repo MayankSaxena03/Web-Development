@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>More on Event Listeners in JavaScript</title>
+</head>
+<body>
+    More on Event Listeners in JavaScript
+    <form action="Readme.txt">
+        Email : <input type="email" name="myEmail" placeholder="E-Mail">
+        <input type="submit" id="btn" value="Submit Now">
+    </form>
+    <h1 id="heading">Bring your cursor on me!</h1>
+</body>
+<script>
+    console.log('More on Event Listeners in JavaScript');
+    let btn = document.getElementById('btn');
+    btn.addEventListener('click', fun);
+    btn.addEventListener('dblclick', doubleFun); //This will call function doubleFUn when we double click the button
+    btn.addEventListener('mousedown', fun3); //This will call function fun3 when we click any key of mouse including clicking scrollbar
+    
+    function fun(e) {
+        console.log('You just clicked the button');
+        e.preventDefault();
+        /* We use preventDefault() so our submit button does not perform its default action which is given in <form action="action">.
+           If we do not use preventDefault(), clicking the button will take us to Readme.txt file
+        */
+    }
+
+    function doubleFun(e) {
+        console.log('You just double clicked the button');
+        e.preventDefault();
+    }
+
+    function fun3(e) {
+        console.log('You just pressed a mouse key or scrollbar');
+    }
+
+    //MouseEnter and MouseLeave
+    document.querySelector('#heading').addEventListener('mouseenter', function(e) {
+        //This block of code will run when the cursor enters the heading area
+        console.log('Your Cursor is on heading');
+    })
+
+    document.querySelector('#heading').addEventListener('mouseleave', function(e) {
+        //This block of code will run when the cursor leaves the heading area
+        console.log('Your Cursor left the heading');
+    })
+
+    //MouseMove Event
+    document.querySelector('body').addEventListener('mousemove', function(e) {
+        //This block of code will run when the cursor moves in body
+        document.body.style.backgroundColor = `rgb(${e.offsetX}, ${e.offsetY}, 154)`; //This will change background color when we move our mouse in body 
+    })
+</script>
+</html>

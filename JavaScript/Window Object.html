@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manipulating Websites using Window Object in JavaScript</title>
+</head>
+<body>
+    Manipulating Websites using Window Object in JavaScript
+</body>
+<script>
+    console.log('Manipulating Websites using Window Object in JavaScript');
+    // Creating a window object
+    let a = window;
+    console.log(a); //We will get a list of window object functions
+    // Window object is a global object in javascript
+    
+    console.log('\n'); //Line Break 
+
+    // window.alert('This is an alert'); This will create an alert. We don't need to add "window." before function as window is a global object.
+    alert('This is an alert');
+    a = prompt('This is a prompt'); //This will show a prompt to the user and whatever user inputs in the prompt gets stored in 'a'.
+    console.log(a); //This will log what the user has input in the prompt
+    a = confirm('This is a confirmation'); //This will show a confirmation message to the user and returns the boolean as per user response.
+    console.log(a); //This will log true if user have selected 'OK' else false
+
+    console.log('\n'); //Line Break 
+
+    a = document; //This will store HTML document in 'a'
+    console.log(a); //This will log our HTML document
+
+    console.log('\n'); //Line Break 
+
+    a = innerHeight; //This will store inner height of browser in 'a'
+    console.log(a); //This will log inner height of browser window
+    a = innerWidth; //This will store inner width of browser in 'a'
+    console.log(a); //This will log inner width of browser window
+    //Similarly there are outerHeight and outerWidth
+
+    console.log('\n'); //Line Break 
+
+    a = scrollX; //This will store scroll on X-axis in 'a'
+    console.log(a); //This will log scroll on X-axis
+    a = scrollY; //This will store scroll on Y-axis in 'a'
+    console.log(a); //This will log scroll on Y-axis
+
+    console.log('\n'); //Line Break 
+
+    a = location; //This will store location of webpage in 'a'
+    console.log(a); //log the location of webpage
+    // location.reload(); will reload the page. 
+    a = location.href; //This will store url location of webpage in 'a'
+    console.log(a); //Will log the url of webpage
+    // location.href = "//google.com" will redirect the page to google. We can set any url to which we want to redirect 
+    a = location.toString(); //This will store location of webpage in string format
+    console.log(a); //This will log the location of webpage in string format
+
+    console.log('\n'); //Line Break 
+    
+    a = history; //This will log the history
+    console.log(a);
+    // history.go(-1); will go to previous point. When we do it again it will takes us 1 page back again. We can type the number of pages we want to go back in parameter
+    /* history.go(1); will take us 1 step forward in history. 
+    For example, consider we are on facebook and then we went to youtube. 
+    Then we go back to facebook again. 
+    Now on facebook window when we run this command, we will go back to youtube page again.
+     We can type number of pages we want to go forward in parameter */
+</script>
+</html>

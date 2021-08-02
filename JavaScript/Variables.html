@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables in Javascript</title>
+</head>
+<body>
+    Variables in Javascript
+</body>
+<script>
+    console.log('Mayank Saxena');
+    var name = 'Mayank'; /* We have declared and initialized a string variable here. We can also use double quotes and ` to store string.*/
+    var surname; /* Declaring a variable */
+    surname = `Saxena`; /*We can use quotation symbols too if the string is stored in `` */
+    console.log(name); /*This will log the value of variable "name" on console*/
+    console.log(surname);
+    var marks = 99; /*We have declared and initialized an integer variable here.*/
+    console.log(marks + 6); /*This will log 105. We are able to do mathematical calculations here because marks is an integer variable.*/
+    console.log(name+surname+marks); /*This will log value of all three variables in console.*/
+
+    /* JavaScript Variable naming convention
+    1. Cannot start with numbers.
+    2. Can start with letters, _ and $ .
+    3. Variable names are case sensitive. */
+
+    const myDevice = 'Samsung A52'; /* We have declared a constant string variable here. Its value cannot be changed after initialization. */
+    console.log(myDevice);
+    // myDevice = 'LG Wing'; This line will throw an error because we are mutating the value of constant variable. 
+    // If we make a constant array we can perform opertions on it but cannot reinitialize it. 
+
+    {
+        let marks = 78; /*This statement will change the value of marks for this block of code only.*/
+        console.log(marks);
+    }
+    console.log(marks); /* This will print the value of var marks assigned globally which is 99 in this case. */
+
+    /* Variable name casing type
+    1. camelCase
+    2. kebab-case
+    3. snake_case
+    4. PascalCase */
+
+</script>
+</html>

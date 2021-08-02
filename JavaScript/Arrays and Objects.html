@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Objects in JavaScript</title>
+</head>
+<body>
+    Arrays and Objects in JavaScript
+</body>
+<script>
+    console.log('Arrays and objects in JavaScript');
+
+    // Ways to declare and initialize arrays
+    let marks = [18, 17, 15, 18, 20]; //Creating an integer array
+    let fruits = ['Orange', 'Apple', 'Strawberry', 'Mango', 'Pineapple']; //Creating a String array
+    let mixed = ['Mayank', 18, 19, 20, [17, 18]]; //Creating a array with different types of variables
+    const arr = new Array(87, 89, 83, 94, 'Apple'); //Another way to make an array
+
+    // Displaying Array
+    console.log(marks);
+    console.log(fruits[2]); //Will Display the value of fruits stored at index 2. In this case it is 'Strawberry';
+    console.log(mixed);
+    console.log(arr);
+
+    // Operations
+    console.log(arr.length); //Will return the length of array
+    console.log(Array.isArray(arr)); //This will return true when we pass an array as a parameter, else false
+    arr[0] = 'Peach' //We can change the value of arr at index [0]. Here we are replacing integer 87 with string 'Peach'
+    console.log(arr);
+    // Note: Even though arr is constant we are able to change the value ofit at index [0]. This is because we are not changing arr. We are changing its value at index [0].
+    // arr = [0, 1, 2, 3, 4]; We will get an error in this case because we are directly assigning new value to arr
+    console.log(marks.indexOf(18)); //Will return the index of first occurence of parameter passed in Array.
+    console.log(marks.lastIndexOf(18)); //Will return the index of last occurence of parameter passed in Array.
+
+    // Mutating Array
+    marks.push(19); //Will add a new value (parameter) in our parameter.
+    console.log(marks);
+    marks.unshift(100); //Will add the element at index [0] of our Array marks.
+    console.log(marks);
+    marks.pop(); //Will remove element at last index of our array. In this case it will remove 19.
+    console.log(marks);
+    marks.shift(); //Will remove element at index [0] of our array. In this case it will remove 100.
+    console.log(marks);
+    marks.splice(1,3); //Will remove elements from index 2 to index 4. In this case it will remove 17, 15, 18.
+    console.log(marks);
+    marks.reverse(); //Will reverse the array
+    console.log(marks);
+    let marks2 = [21, 24, 35, 28];
+    marks = marks.concat(marks2); //Will concatenate marks2 array in marks array.
+    console.log(marks);
+
+    //Objects
+    //Creating an object with different properties.
+    let myobj = {
+        name: 'Mayank',
+        marks: [18, 16, 19, 20, 17],
+        'is Passed': true //We have added ' in 'is Passed' because it has space.
+    };
+    //Accessing object
+    console.log(myobj);
+    //Accessing specified part of object
+    console.log(myobj.marks); //We can access object properties like this but we won't be able to access properties that have space in mae like 'is Passed' by this method.
+    console.log(myobj['is Passed']); //We can access object property like this too. We can access any property like this.
+</script>
+</html>

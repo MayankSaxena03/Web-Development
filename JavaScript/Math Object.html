@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Math Object in JavaScript</title>
+</head>
+<body>
+    Math Object in JavaScript
+</body>
+<script>
+    console.log('Math Object in JavaScript');
+
+    let x = 3;
+    let y = 8;
+    console.log('x : ', x);
+    console.log('y : ', y);
+
+    console.log('\n');
+
+    //Arithmetic Operations;
+    console.log('Arithmetic Operations');
+    console.log('Addition : ', x+y);
+    console.log('Subtraction : ', x-y);
+    console.log('Multiplication : ', x*y);
+    console.log('Division : ', x/y);
+
+    console.log('\n');
+
+    //Math Function
+    console.log('Math Function');
+    console.log(Math); //This will log all Math functions we can use
+
+    console.log('\n');
+
+    //Math Values
+    console.log('Math Values');
+    console.log('Pi : ', Math.PI); //Will log value of pi
+    console.log('e : ', Math.E); //Will log value of euler's number
+
+    console.log('\n');
+    
+    //Math Functions
+    console.log('Math Functions');
+    console.log('Rounding of 5.4 : ', Math.round(5.4)); //Returns the round of integer value of decimal number
+    console.log('Ceiling Value of 5.4 : ', Math.ceil(5.4)); //Returns the smallest integer greater than or equal to its Integer value.
+    console.log('Floor value of 5.4 : ', Math.floor(5.4)); //Returns the floor value of decimal. It will return smaller integer than decimal
+    console.log('Absolute value of -5.4 : ', Math.abs(-5.4)); //Returns Absolute Value (Modulus Value). Turns negative number to positive number
+    console.log('Square Root of 36 : ', Math.sqrt(36)); //Returns square root of number.
+    console.log('2 raise to the power 3 : ', Math.pow(2,3)); //Returns x^y if arguments Math.pow(x,y)
+    console.log('Minimum among 4, 9, 3 : ', Math.min(4, 9, 3)); //Returns minimum number among argumnets
+    console.log('Maximum among 4, 9, 3 : ', Math.max(4, 9, 3)); //Returns maximum number among argumnets
+    console.log('Random number : ', Math.random()); //Prints a random number between 0-1
+    console.log('Random number between 0-100 : ', 100*Math.random()); //Prints a random number between 0-100
+    console.log('Random number between 10-100 : ', 90*Math.random()+10); //Prints a random number between 10-100
+     //To convert these numbers in integer we can use Math.ceil() or Math.floor()
+     console.log('Random integer number between 0-100 : ', Math.ceil(100*Math.random())); //Prints random intteger number between 0 and 100
+</script>
+</html>

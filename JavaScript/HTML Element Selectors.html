@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Element Selectors in JavaScript</title>
+</head>
+<body>
+    HTML Element Selectors in JavaScript
+    <div class="container">
+        <div class="child" id="firstChild">child 1</div>
+        <div class="child">child 2</div>
+        <div class="child">child 3</div>
+        <div class="child">child 4</div>
+    </div>
+</body>
+<script>
+    console.log('HTML Element Selectors in JavaScript');
+    /* Element Selectors :
+       1. Single Selectors
+       2. Multiple Selectors 
+    */
+
+    console.log('\n');
+
+    // Single Element Selector 
+    let element = document.getElementById('firstChild'); //This will get the element which has ID 'firstChild'
+    console.log(element);
+
+    console.log('\n');
+
+    console.log(element.className); //Will log the class/classes of our element.
+
+    console.log('\n');
+
+    console.log(element.childNodes); //Will log the child node/nodes of our element. In our case there is only one child node that is text "child 1".
+    console.log(element.parentNode); //Will log the parent of our element. In our case it is container
+
+    console.log('\n');
+
+    element.style.color = 'red'; // We can change CSS like this of our element. We can change background and many other things using JS in this way.
+
+    element.innerText = 'This text will replace the previous text of our element'; //We can change the text of our element like this
+    console.log(element.innerText); //This will log inner text of our element
+    element.innerHTML = '<b>This text will replace the previous text of our element</b>'; //We can change the inner HTML of our element like this
+    console.log(element.innerHTML); //This will log inner HTML of our element
+
+    console.log('\n');
+
+    // Query Selector
+    let sel = document.querySelector('#firstChild'); //Will store the part of HTML document which consist of element with this ID
+    console.log(sel);
+    sel = document.querySelector('.child'); //Will store the part of HTML document which consist of first element with this class
+    console.log(sel);
+    sel = document.querySelector('b'); //Will store the part of HTML document which consist of first occurence of <b> tag
+    console.log(sel);
+
+    console.log('\n');
+
+    //Multi Element Selector
+    let elem = document.getElementsByClassName('child'); //This will get all the elements with given class name
+    console.log(elem);
+    console.log(elem[0]); //We will get first element with class child.
+    console.log(elem[1]); //We will get second element with class child. Like this, we can access every element of class 'child' 
+
+    console.log('\n');
+
+    elem = document.getElementsByClassName('container'); 
+    console.log(elem[0].getElementsByClassName('child')); //Like this we can get all the elements with class child in class container
+
+    elem = document.getElementsByTagName('div'); //This will get all the elements with given tag
+    console.log(elem);
+    // We can iterate through every element as shown below
+    Array.from(elem).forEach(function(element) {
+        console.log(element);
+    });
+    // We can also do this using for loop as shown below
+    /* for (let index = 0; index < elem.length; index++) {
+        const element = elem[index];
+        console.log(element);
+    } */
+
+</script>
+</html>

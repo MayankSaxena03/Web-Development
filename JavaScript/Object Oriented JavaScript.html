@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Object Oriented JavaScript</title>
+</head>
+<body>
+    Object Oriented JavaScript
+</body>
+<script>
+    console.log('Object Oriented JavaScript');
+
+    //Creating an object
+    let car = {
+        name: 'Maruti Suzuki',
+        topSpeed: 98,
+        run: function() {
+            console.log('Car is running');
+        }
+    };
+    //We have created an object car in above block of code. 
+    //In this case we have created method like "run: function() {}". We can replace this by "run() {}"
+    //Accessing properties of car
+    console.log(car);
+    console.log('Car Name : ', car.name);
+    console.log('Car Speed : ',car.topSpeed);
+    console.log(car.run());
+
+    console.log('\n');
+    
+    //But if we have to create many objects it would be better to use a constructor.
+    //Creating a constructor
+    //It is recommended to start constructor name with upper case alphabet
+    function GeneralCar(givenName, givenSpeed) {
+        this.name = givenName;
+        this.speed = givenSpeed;
+        this.run = function() {
+            console.log(`${this.name} is running at speed of ${this.speed} km/h`);
+        }
+    }
+    //We can use this constructor to create as many objects as we like. It would be easy for us to apply any change globally
+
+    //Creating objects through constructors
+    car2 = new GeneralCar('Mercedes', 90); //Creating new object through constructor with name Mercedes and speed 90
+    console.log(car2); //Will return value of all properties of this GeneralCar object
+    car3 = new GeneralCar('BMW', 150);
+    //We can also add properties specific to a single object as shown below
+    car3.color = 'black'; //This will create a color property for car3 object
+    console.log(car3);
+</script>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Children Parent and Traversing DOM</title>
+</head>
+<body>
+    Children Parent and Traversing DOM in JavaScript
+    <div class="container">
+        <div class="child" id="firstDiv">
+            child 1
+            <ul>
+                <li>This</li>
+                <li>is</li>
+                <li>a</li>
+                <li>list</li>
+            </ul>
+        </div>
+        <!--This is a comment-->
+        <div class="child">child 2</div>
+        <div class="child">child 3</div>
+        <div class="child">child 4</div>
+        <form action="#">
+            Seach here <input type="text" name="" id="">
+            <input type="button" value="submit">
+        </form>
+        <a href="//google.com">Go to Google</a>
+        <a href="//facebook.com">Go to facebook</a>
+    </div>
+    <br>
+    <br>
+    <div class="dummy">This is dummy div 1</div>
+    <div class="dummy">This is dummy div 2</div>
+    <div class="dummy">This is dummy div 3</div>
+</body>
+<script>
+    console.log('Children Parent and Traversing DOM in JavaScript');
+    let cont = document.querySelector('.dummy'); //Will select the first element with class dumnmy
+    console.log(cont);
+    cont = document.querySelector('.container');
+    console.log(cont);
+
+    console.log('\n');
+
+    console.log('childNode and children');
+    console.log(cont.childNodes); //We will get all child nodes of first element with class container. These child nodes will also include comments and if code is written in different lines, the space between them is considered as text which will also be provided as child node
+    //To get only the elements without considering space and comments between them as child nodes, we use children
+    console.log(cont.children); //This will only return child elements without text and comments
+
+    console.log('\n');
+
+    console.log('Getting nodeName and nodeType of child node');
+    //We can also retrieve nodeName and nodeType of element's child
+    console.log(cont.childNodes[1].nodeName); //This will return nodeName of child node at index 1 which is div
+    console.log(cont.childNodes[1].nodeType); //This will return nodeType of child node at index 1 "div".
+    // Node Types List :
+    /* 1 - Element
+       2 - Attribute
+       3 - Text
+       8 - Comment
+       9 - document
+       10 - docType 
+    */
+    console.log(cont.childNodes[3].nodeType); //This will return nodeType of child node at index 3 which is a 'comment', hence will return 8
+
+    console.log('\n');
+
+    console.log('Traversing through Children');
+    let container = document.querySelector('.container');
+    console.log(container);
+    console.log(container.children); //This will log all children of container
+    console.log(container.children[0].children); //This will log the children of child at index [0] of container which is #firstDiv. This will return a ul because there is only 1 ul in #firstDiv
+    console.log(container.children[0].children[0].children); //This will log the children of ul of #firstDiv
+
+    console.log('\n');
+
+    console.log('First child and first element Child');
+    console.log(container.firstChild); //This will return the first child of container which is text. Space between code is also considered in child node.
+    console.log(container.firstElementChild); //This will return the first element of container which is a div
+
+    console.log('\n');
+
+    console.log('Last child and last element Child');
+    console.log(container.lastChild); //This will return the last child of container which is text. Space between code is considered as text node.
+    console.log(container.lastElementChild); //This will return the last element of container which is a div
+
+    console.log('\n');
+
+    console.log('Element Child Count');
+    console.log(container.children);
+    console.log(container.childElementCount); //This will log the number of elements present in container.
+
+    console.log('\n');
+
+    console.log('Parent and Sibling')
+    let ch = container.firstElementChild; //This will get first element child of container and store it in variable 'ch'
+    console.log(ch.parentNode); //This will return the parent of 'ch' which is container.
+    console.log(container.firstElementChild.nextSibling); //This will log the child node next to first element child of container. This will return 'text' as next child node of container is text
+    console.log(container.firstElementChild.nextElementSibling); //This will return the element next to first element in container. 
+    console.log(container.firstElementChild.nextElementSibling.nextElementSibling); //This will return the third element of child of container. We can get all children of container by chaining like this 
+</script>
+</html>

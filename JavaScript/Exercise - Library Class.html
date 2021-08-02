@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise - Library Class</title>
+</head>
+<body>
+    Exercise - Library Class  <br>
+    Task : Create a class named Library. Pass a list consisting of book names as parameters. <br>
+    There should be 3 methods in class.  <br>
+    getBookList() method should return name of books in Library  <br>
+    issueBook(bookName, user) method should issue a book to user  <br>
+    returnBook(bookName) method should return the issued book to Library  <br>
+</body>
+<script>
+    console.log('Welcome to Library');
+    class Library {
+        constructor(bookList) {
+            this.bookList = bookList;
+            this.issuedBooks = [];
+        }
+       
+        getBookList() {
+            this.bookList.forEach(function(e) {
+                console.log(e);
+            });
+        }
+        
+        //issueBook method will issue the book to the user by removing it from bookList and adding it to the issuedBooks. If book is not available in bookList and it will log not available.
+        issueBook(bookName, user) {
+            let index = 0;
+            for (index = 0; index < this.bookList.length; index++) {
+                if(bookName == this.bookList[index]) {
+                    console.log(`${user} has issued the book ${bookName}`);
+                    this.issuedBooks.push(this.bookList[index]);
+                    this.bookList.splice(index, 1);
+                    break;
+                }
+            }
+            if(index == this.bookList.length) {
+                console.log('Requested Book is not available in Library');
+            }
+        } 
+        
+        //returnBook method will return the book in Library if the book is there in the issuedBooks list. It will push the book to bookList so it is available to be issued again 
+        returnBook(bookName) {
+            let index = 0;
+            for (index = 0; index < this.issuedBooks.length; index++) {
+                if(bookName == this.issuedBooks[index]) {
+                    this.bookList.push(bookName);
+                    this.issuedBooks.splice(index, 1);
+                    console.log('Book is returned to the Library. Thank You!');
+                    break;
+                }
+            }
+
+            if(index == this.issuedBooks.length) {
+                console.log('This book does not belong in our Library.')
+            }
+        }
+    }
+
+    //Creating library object
+    let library1 = new Library(["Guradians of the Galaxy", "X-Men", "Avengers"]);
+    console.log('You can use following commands to issue a book :');
+    console.log('library1.getBookList() to get list of books');
+    console.log('library1.issueBook(bookName, user) to issue a book');
+    console.log('library1.returnBook(bookName) to return a book to the library');
+    console.log('library1.issuedBooks check the list of issuedBooks');
+</script>
+</html>

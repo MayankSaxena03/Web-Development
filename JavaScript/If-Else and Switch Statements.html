@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>If-Else & Switch Statements in JavaScript</title>
+</head>
+<body>
+    If-Else and Switch Statements in JavaScript
+</body>
+<script>
+    console.log('If-Else and Switch Statements in JavaScript');
+
+    // if-else
+    const age = 20;
+    if(age >= 18) {
+        console.log('Eligible to Vote'); //If the condition (age is greater than or equal to 18) is true then this block of code will run
+    } else {
+        console.log('Not Eligible to Vote'); //If the condition (age is greater than or equal to 18) is false then this block of code will run
+    }
+
+    //Multiple Conditions
+    const doesDrive = true;
+    if(doesDrive && age >= 18) {
+        console.log('You can drive.');
+    } else {
+        console.log('You cannot drive.');
+    }
+    //If wwe would have used || (OR) then only one condition was required to be true to run the block of code
+    //if else-if else
+    const marks = 78;
+    if (marks >= 75) {
+        console.log('Marks are good');
+    } else if (marks >= 50) {
+        console.log('Marks are average');
+    } else {
+        console.log('Marks are poor');
+    }
+
+    const num = 19;
+    if (num == '19') {
+        console.log('Value of num is 19');
+    }
+    //The above block of code will run even though we checked for string and our variable has an integer stored in it.
+    //To check both value and data type we use ===
+    if (num === '19') {
+        console.log('Value of num is 19');
+    }
+    //Above block code will not run because we have used === and data type does not match.
+
+    //Sample Use Case
+    //We will check whether a variable is defined or not. We have not defined a variable named variable1. We will check if we have defined it or not
+    if (typeof variable1 !== 'undefined') {
+        console.log('variable1 is defined');
+    } else {
+        console.log('Variable1 is not defined'); //This code will run because variable1 is not defined in the code
+    }
+
+    //Some operators 
+    // == : Equals to
+    // != : Not equals to
+    // === : data type and value equals to
+    // !== : data type and value NOT equals to
+    // > : Greater than
+    // >= : Greater than or equal to
+    // < : Less than
+    // <= : Less than or equal to
+    // && : condition1 && condition2 - All conditions must be true to run the code (AND)
+    // || : condition1 || condition2 - Minimum one condition must be true to run the code (OR)
+
+    //Conditional Operator
+    //Syntax: (condition?true-statement:false-statement). Example below
+    console.log(age==20 ? 'Age is 20' : 'Age is not 20');
+
+    //Switch Case
+    /* Syntax : switch(variable) {
+        case value1 :
+            statement
+            break
+        case value2 :
+            statement
+            break
+        default :
+            statement
+            break
+    } */
+
+    switch(age) {
+        case 10:
+            console.log('Age is 10');
+            break;
+        case 20:
+            console.log('Age is 20');
+            break;
+        case 30:
+            console.log('Age is 30');
+            break;   
+        default:
+            console.log('Age is not 10, 20 or 30'); 
+    }
+    //If we do not use break, all statements below the true condition will execute. 
+    //If age is 10 in above code all the statements below 'Age is 20', 'Age is 30' and 'Age is not 10, 20 or 30' will also execute
+</script>
+</html>

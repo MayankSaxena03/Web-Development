@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local and Session Storage in JavaScript</title>
+</head>
+<body>
+    Local and Session Storage in JavaScript
+</body>
+<script>
+    console.log('Local and Session Storage in JavaScript');
+    console.log(localStorage); //localStorage is a function of window object
+
+    console.log('\n');
+
+    //Setting values
+    localStorage.setItem('Name', 'Mayank'); //Storing key and its value in localStorage
+    localStorage.setItem('Name2', 'Harsh');
+    
+    console.log(localStorage); //Will log data of localStorage
+    console.log(typeof localStorage);
+    console.log(typeof localStorage.Name);
+    console.log(localStorage.Name); //get value at key - Name in local storage
+    console.log(localStorage.Name2);
+
+    console.log('\n');
+
+    //Getting values
+    console.log('Getting values');
+    let name = localStorage.getItem('Name'); //Will return value of key name and store it in name variable. If we type key that does not exist we will return null.
+    console.log(name);
+    name = localStorage.getItem('Name2');
+    console.log(name);
+
+    //Clearing Storage
+    // localStorage.clear(); will clear our local Storage
+
+    console.log('\n');
+
+    //Removing a single key-value pair in local storage
+    console.log('Removing a single key-value pair in local storage');
+    localStorage.removeItem('Name2'); //This will remove item with key 'Name2' from local storage
+    console.log(localStorage);
+
+    console.log('\n');
+
+    //Storing array in localStorage
+    console.log('Storing array in localStorage');
+    let arr = ['apple', 'banana', 'pineapple'];
+    //We cannot store array in localStorage
+    localStorage.setItem('array', arr); //This will store our array as String
+    let a = localStorage.getItem('array');
+    console.log(a);
+    console.log(typeof a); //This will return string because our array is stored as String.
+    //To solve this issue we use JSON.stringify and JSON.parse
+    localStorage.setItem('array', JSON.stringify(arr)); //This will convert arr into JSON object
+    console.log(typeof localStorage.getItem('array')); //This will still return its type as String
+    a = JSON.parse(localStorage.getItem('array')); //This will parse string into array
+    console.log(a); //This will now return an array
+    console.log(typeof a); //This will now return object
+
+    console.log('\n');
+
+    //Session Storage
+    console.log('Session Storage');
+    //Session storage has function similar to localStorage
+    sessionStorage.setItem('sName', 'sMayank'); //Storing key and its value in sessionStorage
+    sessionStorage.setItem('sName2', 'sHarsh');
+    //If we comment out Session storage and Local Storage and restart our website, localStorage data will remain while sessionStorage data will be gone.
+    //localStorage data will remain forever while sessionStorage will be cleared after every session
+    //To clear localStorage we use localStorage.clear(), and to clear seesionStorage we use sessionStorage.clear()
+
+</script>
+</html>
