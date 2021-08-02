@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyframes and Animations</title>
+    <style>
+        .container {
+            background-color: cornflowerblue;
+        }
+
+        .box-1 {
+            background-color: blue;
+            width: 250px;
+            height: 250px;
+            position: relative; /* Setting position relative so we can move the box. */
+            animation-name: first-animation;
+            animation-duration: 6s; /*It defines the time taken to complete a single iteration of animation*/
+            animation-iteration-count: 3; /*We need to input the number of times we want to run our animation. We can set it infinite too.*/
+            animation-fill-mode: forwards; /*It will set the properties of this box to a position where animation ends. In this case after animation end the width of box will change to 500px. We can set it to before so when the animation ends the width of box will be 150px. */
+            animation-timing-function: ease-in; /*Animation will be slow at start but will be fast at the end. For ease-out animation will be fast at start but will be slow at end. */
+        }
+
+        /* Below animation will change the width of box from 250px to 500px and will be applied to box-1 */
+        @keyframes first-animation {
+            from {
+                width: 150px;
+            }
+            to {
+                width: 500px;
+            }
+        }
+
+        .container2 {
+            background-color: orchid;
+        }
+
+        .box-2 {
+            background-color: rgb(240, 3, 200);
+            width: 250px;
+            height: 250px;
+            position: relative;
+            animation-name: second-animation;
+            animation-duration: 6s;
+            animation-iteration-count: infinite; /*Animation will ruun infinite times*/
+            animation-timing-function: ease-in-out; /*Animation will be slow in start and end and will be fast in middle.*/
+            animation-delay: 2s; /*There will be a delay of 2 sec before animation will start.*/
+            /* animation-direction: reverse; Animation will run in reverse */
+            animation-direction: alternate; /* Odd iterations are run in normal direction and even iterations are run in reverse direction */
+        }
+
+        /* Below animation will change the position of box and will be applied to box-2 */
+        @keyframes second-animation {
+            /*At 0% below changes will be applied*/
+            0% {
+                top: 0px;
+                left: 0px;
+            }
+            /*At 25% below changes will be applied*/
+            25% {
+                top: 250px;
+                left: 0px;
+            }
+            /*At 50% below changes will be applied*/
+            50% {
+                top: 250px;
+                left: 250px;
+            }
+            /*At 75% below changes will be applied*/
+            75% {
+                top: 0px;
+                left: 250px;
+            }
+            /*At 100% below changes will be applied*/
+            100% {
+                top: 0px;
+                left: 0px;
+            }
+        }
+
+        /* Note: We can use shorthand property of animation which is animation: animation-name animation-duration animation-timing-function animation-delay animation-iteration-count animation-fill-mode; */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box-1">
+            This is a box.
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="box-2">
+            This is also a box.
+        </div>
+    </div>
+</body>
+</html>

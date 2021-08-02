@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables and Custom Properties</title>
+    <style>
+        /* We can declare variables that we can use globally in root selector. */
+        :root {
+            --primary-color: yellow;
+            --secondary-color: red;
+            --container-width: 700px;
+        }
+
+        .box {
+            --box-color: violet; /* We have created a variable box-color in .box class and it can we accessed only in this class. */
+            background-color: var(--box-color); /*Using variable which is available to this class */
+            width: 200px;
+            height: 200px;
+            margin: 20px;
+            border: 4px solid var(--secondary-color); /*We are using variable which is available globally because it is declared using root selector*/
+        }
+
+        .container {
+            display: flex;
+            /* background-color: var(--box-color); We cannot use this here because --box-color is only defined for .box class. */
+            background-color: var(--primary-color); /*We are able to use this variable because it was declared in root selector.*/
+            width: var(--container-width);
+            margin: auto;
+        }
+        /* Note: These properties are useful when we have to change a value in whole CSS file. We can change them at once if we change value of variable */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+</body>
+</html>

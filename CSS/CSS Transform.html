@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transform</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+        .container {
+            height: 80vh;
+            background-color: darkcyan;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .box {
+            height: 200px;
+            width: 200px;
+            margin: 20px;
+            background-color: skyblue;
+            border: 3px solid black;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease-in-out;
+        }
+
+        #box-1:hover {
+            transform: rotate(360deg);  /*This will rotate the box by 360 degree*/
+        }    
+
+        #box-2:hover {
+            transform: skew(40deg); /*This will set the skew angle to 40 degree*/
+        }
+
+        #box-3:hover {
+            transform: scale(2); /*This will enlarge the box and its content by two times*/
+        }
+
+        #box-4:hover {
+            transform: translateX(123px); /*This will make the box move on X-axis by 123px*/
+        }
+
+        #box-5:hover {
+            transform: translateY(123px); /*This will make the box move on Y-axis by 123px*/
+        }
+
+        #box-6:hover {
+            transform: translate(123px, 123px); /*This will make the box move on X-axis & Y-axis by 123px**/
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box-1">This is  box 1</div>
+        <div class="box" id="box-2">This is  box 2</div>
+        <div class="box" id="box-3">This is  box 3</div>
+        <div class="box" id="box-4">This is  box 4</div>
+        <div class="box" id="box-5">This is  box 5</div>
+        <div class="box" id="box-6">This is  box 6</div>
+    </div>
+</body>
+</html>

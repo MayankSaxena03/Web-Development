@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fonts in CSS</title>
+    <!-- Importing the stylesheet for web font -->
+    <link href="https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap" rel="stylesheet">
+    <style>
+        .paragraph1 {
+            font-family: Arial; /* Will provide the web safe font Arial to elements with class paragraph1 */
+            font-size: 18px; /* Will set the font size in pixels. 1 pixel = 1/96 inch */
+            line-height: 1.3em; /* Will add the space between text */
+            font-weight: lighter; /* Will specify the width of stroke on text. */
+            font-style: normal; /* Will specify the font style which is normal or italics. */
+        }
+        .paragraph2 {
+            font-family: Viaoda Libre; /* Will provide the web safe font Viaoda Libre to elements with class paragraph2. We have imported a stylesheet for this font so that it is visible on all devices consisting of devices on which this font syle is not installed.*/
+            font-size: 24px; /* Will set the font size in pixels. 1 pixel = 1/96 inch */
+            line-height: 1.3em; /* Will add the space between text */
+            font-weight: bold;
+            font-style: italic;
+        }
+        .paragraph3 {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; /* This is a font stack. It will move forward in the list until a font is found which is available on device and then display it. */
+            font-size: 30px;
+            line-height: 1.3em;
+            font-weight: bolder; /* Will specify the width of stroke on text. */
+            font-style: normal;/* Will specify the font style which is normal or italics. */
+        }
+    </style>
+</head>
+<body>
+    <p class="paragraph1">This is web safe font. It is available on all devices.</p> <!-- Web safe fonts are fonts that are pre-installed by many operating systems. -->
+    <p class="paragraph2">This is web font. The stylesheet need to be imported to make the font visible on a device where font is not installed.</p> <!-- Unlike web safe fonts, web fonts are not pre-installed on the user's system. The fonts are downloaded by the user's browser while rendering the webpage, and then applied to your text.  -->
+    <p class="paragraph3">This is font stack. The font available on the device from the list will be applied on the webpage for that device.</p> <!-- A font stack is a list of fonts in the CSS font-family declaration. ... A font stack allows you to control the look of the fonts on the web page even if the site visitor's computer doesn't have the initial font that you called for. -->
+</body>
+</html>

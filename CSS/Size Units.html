@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Size Units</title>
+    <style>
+        html {
+            font-size: 25px;
+        }
+        .container {
+            border: 2px solid black;
+            font-size: 10px;
+            height: 100vh; /*will set the height to fill the screen. To make a container with height 70% we will give height 70vh and that's how we can provide height of our choice.*/
+            width: 70vw; /* It is equivalent to width: 70% */
+        }
+        #first {
+            text-align: center;
+        }
+        #second {
+            text-align: center;
+            font-size: 3em; /* em unit is used when we have to define size in respect of parent. Here the parent is container and its font-size is 10px so the font size of this heading will be 3*10=30px */
+            padding: 3em; /* The padding here will be 90px. It is because the font-size became parent of padding and padding becomes 3*30=90px */
+        }
+        #third {
+            text-align: center;
+            font-size: 3rem; /* rem unit is used to define size in respect of html. We have declared font-size of html as 10px so font size of this heading will be 3*25=75px */
+            padding: 3rem; /*padding can also be calculated similarly as 3*25=75px */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="first">This is first heading.</h1>
+        <h1 id="second">This is second heading.</h1>
+        <h1 id="third">This is third heading.</h1>
+    </div>
+</body>
+</html>

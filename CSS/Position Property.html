@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Position Property</title>
+    <style>
+        /* Note: fixed position will not occupy any space in the body, so the next element will be behind the fixed element. sticky position occupies the space, so the next element will not be hidden behind it. */
+        .container {
+            border: 5px solid black;
+            height: 2345px; /*Setting large height to see sticky and fixed positions.*/
+        }
+        .box {
+            display: inline-block;
+            border: 3px solid grey;
+            width: 150px;
+            height: 150px;
+            margin: 10px;
+            right: 4px
+        }
+        /* Note: position: static is the default position of the element */
+        #box1 {
+            margin: 30px;
+            position: absolute; /*absolute: Positions the element relative to the positon of its first parent which is container in this case.*/
+            left: 10px;
+        }
+        #box2 {
+            margin: 30px;
+            position: relative; /* relative: Positions the element relative to its normal positon which is after block 1. We can change the relative positions from all direction as shown below.*/
+            left: 20px; /*Will shift box 20px from left edge of its relative position*/
+            top: 10px;
+        }
+        #box3 {
+            margin: 30px;
+            position: fixed; /* fixed: Positions the element relative to the browser window; */
+            bottom: 10px;
+            right: 10px;
+        }
+        #box4 {
+            margin: 30px;
+            position: sticky; /*sticky: Positions the element relative to the users scroll position*/
+            top: 0px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box" id="box1">Box 1</div>
+        <div class="box" id="box2">Box 2</div>
+        <div class="box" id="box3">Box 3</div>
+        <div class="box" id="box4">Box 4</div>
+    </div>
+</body>
+</html>

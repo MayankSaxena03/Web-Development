@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box and Text Shadow</title>
+    <style>
+        .container {
+            display: flex;
+            /* background-color: rgba(219, 47, 235, 0.4); rgba(red green blue alpha). Alpha defines the darkness of color. */
+        }
+
+        /* Implementing shadow outside box */
+        #card-1 {
+            border-radius: 8px;
+            background-color: plum;
+            padding: 23px 12px;
+            margin: 23px 12px;
+            /* box-shadow: 7px 5px grey; box-shadow: offset-x offset-y color */
+            /* box-shadow: 7px 5px 5px grey; box-shadow: offset-x offset-y blur-radius color */
+            box-shadow: 7px 5px 5px 2px grey; /* box-shadow: offset-x offset-y blur-radius spreaad-radius color */
+        }
+        
+        /* Note 1: The blur radius, if set to 0 the shadow will be sharp, the higher the number, the more blurred it will be, and the further out the shadow will extend. */
+        /* Note 2: Spread Radius - A positive value increases the size of the shadow, a negative value decreases the size of the shadow */
+        /* To see the difference visit: https://codepen.io/jamesanwyl/pen/VLGyVR*/
+
+        /* Implementing multiple shadows */
+        #card-2 {
+            border-radius: 8px;
+            background-color: plum;
+            padding: 23px 12px;
+            margin: 23px 12px;
+            /* We can put multiple shadows by seperating them through comma as shown below */
+            box-shadow: 7px 5px 5px 2px grey, 8px 4px 7px 3px red;
+        }
+        
+        /* Implementing shadow inside box */
+        #card-3 {
+            border-radius: 8px;
+            background-color: plum;
+            padding: 23px 12px;
+            margin: 23px 12px;
+            /* To put shadow inside box we use inset as shown below */
+            box-shadow: inset 7px 5px 5px 2px grey;
+        }
+
+        /* Implementing text shadows */
+        #card-1 h2 {
+            /* text-shadow: offset-x offset-y color */
+            /* text-shadow: 3px 2px white;  */
+            /* text-shadow: offset-x offset-y blur-radius color */
+            text-shadow: 3px 2px 4px white;
+        }
+        
+        /* Implementing multiple text shadows */
+        #card-2 h2 {
+            /* We can put multiple shadows by seperating them through comma as shown below */
+            text-shadow: 3px 2px 4px white, 2px 3px 4px red;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="card" id="card-1">
+            <h2>Card 1</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus doloribus qui accusamus id officia
+                quasi deserunt delectus quam vitae, minus est sapiente assumenda itaque recusandae quibusdam aliquid
+                explicabo provident! Dignissimos laboriosam ipsam aperiam repellendus?</p>
+        </div>
+        <div class="card" id="card-2">
+            <h2>Card 2</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus doloribus qui accusamus id officia
+                quasi deserunt delectus quam vitae, minus est sapiente assumenda itaque recusandae quibusdam aliquid
+                explicabo provident! Dignissimos laboriosam ipsam aperiam repellendus?</p>
+        </div>
+        <div class="card" id="card-3">
+            <h2>Card 3</h2>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ducimus doloribus qui accusamus id officia
+                quasi deserunt delectus quam vitae, minus est sapiente assumenda itaque recusandae quibusdam aliquid
+                explicabo provident! Dignissimos laboriosam ipsam aperiam repellendus?</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

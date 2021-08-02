@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Property</title>
+    <style>
+        /*Note : We can only apply wodth to block elements because inline elements will take as much width as required to fill the content.*/
+        /*We can convert element into block or inline using display property.*/
+        * {
+            box-sizing: border-box;
+        }
+        
+        .top {
+            border: 3px solid black;
+        }
+
+        .logo {
+            border-radius: 50%; /* Turned the image circular. */
+            display: block; /*Will turn the inline object to block so it takes same width as parent. It will take same width space as parent after applying this. We can center the image using mmargin: auto after this.*/
+            margin: auto;
+        }
+
+        .heading3, .heading4 {
+            text-align: center;
+        }
+
+        .box {
+            border: 2px solid grey;
+            padding: 10px;
+            display: inline-block; /*It is used to provide width to a inline element without chainging it to block element. */
+            width: 33%;
+        }
+
+        .container {
+            margin: auto;
+            padding: 10px 0px;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="top">
+        <img src="data:image/jpeg;base64,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"
+            alt="Error Loading Image" class="logo">
+        <h3 class="heading3">Welcome to my Website</h3>
+    </header>
+    <div class="container">
+        <div class="box">
+            <h4 class="heading4">
+                Heading 1
+            </h4>
+            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati numquam mollitia ipsam
+                quos autem modi nisi eum aliquam doloribus, asperiores tempore fugit. Magnam dicta quod omnis aperiam
+                numquam. Odit, facilis!
+                Corporis alias, aspernatur dolorum debitis voluptatum rerum sit reprehenderit dolor nihil nesciunt
+                necessitatibus cupiditate inventore facilis? Ipsam ex nihil in impedit reprehenderit dolor quae delectus
+                laborum culpa animi, necessitatibus accusantium.
+            </p>
+        </div>
+        <div class="box">
+            <h4 class="heading4">
+                Heading 2
+            </h4>
+            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati numquam mollitia ipsam
+                quos autem modi nisi eum aliquam doloribus, asperiores tempore fugit. Magnam dicta quod omnis aperiam
+                numquam. Odit, facilis!
+                Corporis alias, aspernatur dolorum debitis voluptatum rerum sit reprehenderit dolor nihil nesciunt
+                necessitatibus cupiditate inventore facilis? Ipsam ex nihil in impedit reprehenderit dolor quae delectus
+                laborum culpa animi, necessitatibus accusantium.
+            </p>
+        </div>
+        <div class="box">
+            <h4 class="heading4">
+                Heading 3
+            </h4>
+            <p class="text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Obcaecati numquam mollitia ipsam
+                quos autem modi nisi eum aliquam doloribus, asperiores tempore fugit. Magnam dicta quod omnis aperiam
+                numquam. Odit, facilis!
+                Corporis alias, aspernatur dolorum debitis voluptatum rerum sit reprehenderit dolor nihil nesciunt
+                necessitatibus cupiditate inventore facilis? Ipsam ex nihil in impedit reprehenderit dolor quae delectus
+                laborum culpa animi, necessitatibus accusantium.
+            </p>
+        </div>
+    </div>
+</body>
+
+</html>

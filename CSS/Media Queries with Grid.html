@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries with Grid</title>
+    <style>
+        .container {
+            display: grid;
+            grid-gap: 1rem;
+            grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section aside'
+                'footer footer footer footer';
+        }
+
+        .item {
+            border: 2px solid black;
+            background-color: cornflowerblue;
+            padding: 20px;
+        }
+
+        #navbar {
+            grid-area: navbar; /*We have given name to grid area of navbar.*/
+        }
+
+        #section {
+            grid-area: section; /*We have given name to grid area of section.*/
+        }
+
+        #aside {
+            grid-area: aside; /*We have given name to grid area of aside.*/
+        }
+
+        footer {
+            grid-area: footer; /*We have given name to grid area of footer.*/
+        }
+
+        /*Using media query to change grid template layout for different screen sizes.*/
+        @media only screen and (max-width:600px){
+            body{
+                background-color: cyan;
+            }
+            
+            /*For this screen size container will store grid in below template format*/
+            .container {
+                grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer';
+            }
+        }
+
+        /* CSS below will trigger when min-width of device is 748px and max-width is 1122px. */
+        @media only screen and (min-width: 600px) and (max-width:1200px) {
+            body{
+                background-color: yellow;
+            }
+            
+            /*For this screen size container will store grid in below template format*/
+            .container {
+                grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section section'
+                'aside aside aside aside'
+                'footer footer footer footer';
+            }
+        }
+
+        /* CSS below will trigger when min-width of device is 1122px. */
+        @media only screen and (min-width: 1200px)  {
+            body{
+                background-color: orange;
+            }
+            
+            /*For this screen size container will store grid in below template format*/
+            .container {
+                grid-template-areas:
+                'navbar navbar navbar navbar'
+                'section section section aside'
+                'footer footer footer footer';
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div id="navbar" class="item">
+            Home About-Us Services Contact-Us
+        </div>
+        <div id="section" class="item">
+            <h1>Learn CSS</h1>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla nisi expedita quae quas reiciendis dolore
+            tempora aliquam odit omnis ab! Distinctio officia reprehenderit quae sint numquam libero aperiam tempore
+            officiis repudiandae hic veniam laudantium nisi assumenda tenetur, nesciunt saepe! Assumenda laborum quia
+            aut quam vero doloremque veritatis quibusdam, suscipit est mollitia nulla necessitatibus, accusamus libero
+            impedit accusantium ut iusto exercitationem eligendi fugit iste. Ullam illum magnam delectus explicabo.
+            Totam eum adipisci sapiente sint dolores libero cumque! Eum, blanditiis neque? Amet soluta fugiat nihil
+            ratione quae obcaecati magnam saepe, est repudiandae animi. Maiores numquam laborum aliquam veniam quia
+            omnis iure, natus aperiam voluptas nostrum eaque animi pariatur officia assumenda beatae earum atque quae
+            dolorem, consequuntur reiciendis? Rem quo qui facere aut perferendis amet, iste eos sequi deleniti
+            doloremque odit doloribus reprehenderit dolor, officia voluptas. Doloribus minus, dolore neque nesciunt
+            blanditiis repellendus possimus quod odio quasi ex quis adipisci accusantium ullam obcaecati!</p>
+        </div>
+        <div id="aside" class="item">
+            <h1>More About CSS</h1>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nam eveniet in, placeat ex dignissimos dolorum
+            animi impedit, architecto aspernatur deleniti ut, obcaecati soluta facere cumque similique aliquid quis
+            tempore quod consequatur eligendi itaque magni iure? Tenetur, error delectus exercitationem ea, blanditiis
+            debitis culpa ab omnis porro numquam earum! Inventore, similique laborum recusandae ad suscipit architecto
+            ex facilis nemo voluptates eveniet quos deleniti libero illo repellendus cumque consequatur rerum non, dolor
+            explicabo aliquam, porro quibusdam optio doloremque? Pariatur repudiandae deserunt voluptate cumque. Dicta
+            reiciendis adipisci eaque unde molestias modi, a obcaecati optio? Voluptas quam iste temporibus quo natus.
+            Odit, iusto? Vero?</p>
+        </div>
+        <footer class="item">
+            <em>Tutorial by Mayank</em>
+        </footer>
+    </div>
+</body>
+
+</html>

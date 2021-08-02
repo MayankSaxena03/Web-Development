@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Model</title>
+    <style>
+        #paragraph1 {
+            border: 4px solid black;
+            /* adding padding to our paragraph1 */
+            padding: 10px; /* This will aplly padding to all the directions of our content*/
+            /* adding margin to paragraph1 */
+            margin: 30px;
+        }
+        #paragraph2 {
+            border: 4px solid black;
+            /* adding padding to each direction seperately in our paragraph2 */
+            padding-top: 10px; /* This will apply padding in top direction of our content*/
+            padding-right: 10px; /* This will apply padding in right direction of our content*/
+            padding-bottom: 10px; /* This will apply padding in bottom direction of our content*/
+            padding-left: 10px; /* This will apply padding in left direction of our content*/
+            /* adding margin to each direction seperately in our paragraph2 */
+            margin-top: 30px; /*This will apply margin in top direction of our container*/
+            margin-right: 30px; /*This will apply margin in right direction of our container*/
+            margin-bottom: 30px; /*This will apply margin in bottom direction of our container*/
+            margin-left: 30px; /*This will apply margin in left direction of our container*/
+        }
+        #paragraph3 {
+            border: 4px solid black;
+            /*Assigning different padding to all directions with one line of code.*/
+            padding: 10px 10px 40px 30px;
+            /*Format used is padding: top right bottom left*/       
+            /*Assigning different margin to all directions with one line of code.*/
+            margin: 10px 10px 40px 30px;
+            /*Format used is margin: top right bottom left*/
+        }
+        #paragraph4 {
+            border: 4px solid black;
+            /* We can assign padding and margin to x and y direction */
+            padding: 10px 20px;
+            /*Format used is padding: y(top/bottom) x(left/right)*/
+            margin: 30px 40px;
+            /*Format used is margin: y(top/bottom) x(left/right)*/
+        }
+        #paragraph5 {
+            border: 4px solid black;
+            width: 300px;
+            margin: 80px;
+            padding: 50px;
+            /*You will notice that when you increase the padding the width of the container will also change even though it is pre-defined. 
+            This is due to the fact that margin and padding gets added to the width of container. */
+            /*To fix this we will use box model. See it in paragraph6.*/
+        }
+        #paragraph6 {
+            box-sizing: border-box; /*padding and margin will not be added to the width of this container now. It will change height to fit content.*/
+            border: 4px solid black;
+            width: 300px;
+            margin: 80px;
+            padding: 50px;
+            /*On increasing padding, the height of container will change to fit the content without changing width.*/
+        }
+    </style>
+</head>
+<body>
+    <!-- In web development, the CSS box model refers to how HTML elements are modeled in browser engines and how the dimensions of those HTML elements are derived from CSS properties. 
+        It is a fundamental concept for the composition of HTML webpages. -->
+    <p id="paragraph1">Hello, This is my first paragraph!</p>
+    <p id="paragraph2">Hello, This is my second paragraph!</p>
+    <p id="paragraph3">Hello, This is my third paragraph!</p>
+    <p id="paragraph4">Hello, This is my fourth paragraph!</p>
+    <p id="paragraph5">Hello, This is my fifth paragraph!</p>
+    <p id="paragraph6">Hello, This is my sixth paragraph!</p>
+</body>
+</html>

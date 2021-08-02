@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visibility and z-index</title>
+    <style>
+        .box {
+            width: 170px;
+            height: 170px;
+            border: 2px solid black;
+        }
+        #box1 {
+            background-color: rebeccapurple;
+            display: none; /*It completely removes an HTML tag from the web page like it was never there.*/
+        }
+        #box2 {
+            background-color: lightgreen;
+            visibility: hidden; /* It makes the tag invisible but will not remove the element, and it will still occupy the space on the page. */
+        }
+        /*Note: visibility:hidden means that unlike display:none , the tag is not visible, but space is allocated for it on the page. The tag is rendered, it just isn't seen on the page. They are not synonyms. display:none removes the element from the normal flow of the page, allowing other elements to fill in.*/
+
+        /* The z-index property specifies the stack order of an element. An element with greater stack order is always in front of an element with a lower stack order. */
+        /* The default z-index value of all the elements on a web page is auto, which corresponds to 0 where no z-index is assigned. An element with z-index: -1 will be displayed behind all other elements on the page, assuming they are given no z-index values. */
+        /* IMPORTANT : For z-index to work we need to provide position to the element other than static which is default. */
+        #box3 {
+            background-color: cyan; 
+            position: relative;
+            z-index: 20;
+            top: -20px; /* box3 will overlap above box2 because its z- index (20) is higher than that of box2 which is 1 by default. */
+        }
+        #box4 {
+            background-color: cornflowerblue;
+            position: relative;
+            z-index: 30;
+            top: -40px; /* box4 will overlap above box3 because its z- index (30) is higher than that of box3 which is 20. */
+        }
+        #box5 {
+            background-color: indianred;
+            position: relative;
+            z-index: 40;
+            top: -60px; /* box5 will overlap above box4 because its z- index is higher (40) than that of box4 which is 30. */
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+    <div class="box" id="box3"></div>
+    <div class="box" id="box4"></div>
+    <div class="box" id="box5"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Transitions</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            background-color: red;
+            display: flex;
+            width: 250px;
+            height: 250px;
+            justify-content: center;
+            align-items: center;
+            /* transition-property: background-color; Transition will only be applied to background-color property */
+            transition-property: all; /* Transition will be applied to all properties like width, height, font-size, border-radius */
+            transition-duration: 2s; /* Duration of transition */
+            transition-timing-function: ease-in-out; /*Transition will be slow in start and end and will be fast in middle.*/
+            /*For ease-in transition will be slow at start but will be fast at the end. For ease-out transition will be fast at start but will be slow at end. */
+            transition-delay: 0.4s; /* Transition will start with a delay of 0.4 second. */
+        }
+        
+        .box:hover {
+            background-color: blue;
+            width: 500px;
+            height: 500px;
+            font-size: 32px;
+            border-radius: 30px;
+        }
+
+        /* Short Hand Property is show below */
+        /* transition: transition-property transition-duration transition-timing-function transition-delay; */
+        /* For box transition: all 2s ease-in-out 0.4s; */
+    </style>
+</head>
+<body>
+     <div class="container">
+         <div class="box">
+             This is a box.
+         </div>
+     </div>
+</body>
+</html>

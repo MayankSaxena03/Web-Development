@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Media Queries</title>
+    <style>
+        .box {
+            background-color: orange;
+            text-align: center;
+            font-size: 30px;
+        }
+
+        /* We can trigger different CSS for different screen sizes using media queries as shown below. */
+
+        /* CSS below will trigger when min-width is 0px and max-width of device is 374px. */
+        @media only screen and (max-width:374px){
+            #box-1{
+                background-color: cyan;
+            }
+        }
+
+        /* CSS below will trigger when min-width of device is 374px and max-width is 748px. */
+        @media only screen and (min-width: 374px) and (max-width:748px) {
+            #box-2{
+                background-color: blueviolet;
+            }
+        }
+
+        /* CSS below will trigger when min-width of device is 748px and max-width is 1122px. */
+        @media only screen and (min-width: 748px) and (max-width:1122px) {
+            #box-3{
+                background-color: yellow;
+            }
+        }
+
+        /* CSS below will trigger when min-width of device is 1122px. */
+        @media only screen and (min-width: 1122px)  {
+            #box-4{
+                background-color: green;
+            }
+        }
+
+        /* Note: only screen: The only keyword is used to prevent older browsers that do not support media queries with media features from applying the specified styles. */
+        /* Note: screen: It is used to set the screen size of media query. The screen size can be set by using max-width and min-width. The screen size is differ from screen to screen.  */
+    </style>
+</head>
+<body>
+    <div class="box" id="box-1">Small Screen</div>
+    <div class="box" id="box-2">Medium Screen</div>
+    <div class="box" id="box-3">Large Screen</div>
+    <div class="box" id="box-4">Very Large Screen</div>
+</body>
+</html>

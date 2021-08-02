@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buttons and Links</title>
+    <style>
+        .btn {
+            background-color: cadetblue;
+            padding: 6px;
+            font-size: 14px;
+            border: none; /* Removes border from button */
+            border-radius: 3px;
+            cursor: pointer; /* Will show pointer as show on link when moving the cursor on them. */
+        }
+        /* We can change the CSS properties of elements when the cursor hovers over them. */
+        .btn:hover {
+            background-color: orangered; /* Will turn the background color of button to orangered when we hover over the button. */
+        }
+        .link {
+            text-decoration: none; /* Will remove the underline from link. */
+        }
+        .link:hover {
+            color: red; /* will turn the link text color to red when we hover over it. */
+        }
+        /* the :active selector is used to style links when you click on them. */
+        .link:active {
+            color: black;
+        }
+        /* The :visited selector is used to select visited links. */
+        .link:visited {
+            color:purple;
+        }
+    </style>
+</head>
+<body>
+    <h1>Button & Links</h1>
+    <button class="btn">Hello</button>
+    <!-- Change the link below to check the CSS applied on link. -->
+    <a href = "https://fonts.google.com/" class="link" target="_blank">Google Fonts</a>
+</body>
+</html>

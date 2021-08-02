@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Float and Clear</title>
+    <style>
+        /* * is a universal selector and applies the properties to all elements. */
+        * {
+            box-sizing: border-box;
+        }
+        .container {
+            border: 4px solid black;
+            width: 1200px;
+            margin: auto; /*margin:auto Can be used to align object in center horizontally. we used "margin: 33px auto" so we get a vertical margin for our container and align the container in center horizontally. */
+        }
+        .items {
+            border: 3px solid grey;
+            padding: 10px;
+            margin: 10px;
+        }
+        p {
+            text-align: justify; /* Will align the text to justify alignment. */
+        }
+        h1,h3 {
+            text-align: center;
+        }
+        /* Normally div elements will be displayed on top of each other. However, if we use float: left we can let elements float next to each other */
+        #fruit {
+            float: right; /*Will make the element float from left to right*/
+            width: 48%;
+        }
+        #computer {
+            float:left; /*Will make the element float from right to left*/
+            width: 48%;
+        }
+        /* When we use the float property, and we want the next element below (not on right or left), we will have to use the clear property. */
+        #stationary {
+            clear: both; /* We can use clear: left or clear: right if we have float in a single direction. */
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Welcome to store</h1>
+        <div class="items" id="fruit">
+            <h3>Fruits</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis debitis quas nam quos repudiandae optio
+                voluptatem sunt atque, reiciendis nihil saepe id, dignissimos molestias esse, tenetur corporis
+                recusandae! Pariatur soluta atque beatae quidem error hic doloremque blanditiis. Sunt alias, quo
+                repellendus dicta dolor consectetur quas ipsa expedita veniam minima! Assumenda?</p>
+        </div>
+        <div class="items" id="computer">
+            <h3>Computer</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis debitis quas nam quos repudiandae optio
+                voluptatem sunt atque, reiciendis nihil saepe id, dignissimos molestias esse, tenetur corporis
+                recusandae! Pariatur soluta atque beatae quidem error hic doloremque blanditiis. Sunt alias, quo
+                repellendus dicta dolor consectetur quas ipsa expedita veniam minima! Assumenda?</p>
+        </div>
+        <div class="items" id="stationary">
+            <h3>Stationary</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis debitis quas nam quos repudiandae optio
+                voluptatem sunt atque, reiciendis nihil saepe id, dignissimos molestias esse, tenetur corporis
+                recusandae! Pariatur soluta atque beatae quidem error hic doloremque blanditiis. Sunt alias, quo
+                repellendus dicta dolor consectetur quas ipsa expedita veniam minima! Assumenda?</p>
+        </div>
+        <div class="items" id="game">
+            <h3>Games</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis debitis quas nam quos repudiandae optio
+                voluptatem sunt atque, reiciendis nihil saepe id, dignissimos molestias esse, tenetur corporis
+                recusandae! Pariatur soluta atque beatae quidem error hic doloremque blanditiis. Sunt alias, quo
+                repellendus dicta dolor consectetur quas ipsa expedita veniam minima! Assumenda?</p>
+        </div>
+    </div>
+</body>
+
+</html>

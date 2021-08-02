@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Before and After Pseudo Selector</title>
+    <style>
+        body {
+            background-color: black;
+            color: white;
+            margin: 0;
+            padding: 0;
+            /* background: url(https://source.unsplash.com/random) no-repeat center center/cover; This might not cover whole page.*/
+        }
+
+        header::before{
+            background: url('https://source.unsplash.com/random') no-repeat center center/cover; /* Image-repeat-position */
+            content: "";
+            /*Below three lines will set the image to full page. */
+            position: absolute;
+            top:0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1; /* Setting z-index: -1 so the image goes to the background */
+            opacity: 0.3; /* Less opaciy makes it easier for us to read text */
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: center;
+        }
+
+        .navigation {
+            display: flex;
+        }
+
+        .navigation li {
+            list-style: none;
+            padding: 20px 23px;
+        }
+
+        section {
+            height: 344px;
+            margin: 3px 230px;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /*Horizontally align content*/
+            justify-content: center; /*Vertically align content*/
+        }
+
+        h1 {
+            font-size: 4rem;
+        }
+        
+        p {
+            text-align: center;
+        }
+
+        /*Changing first-line of paragraph*/
+        p::first-line {
+            color: yellow;
+        }
+
+        /*Changing first-letter of paragraph*/
+        p::first-letter {
+            color: red;
+            font-size: 32px;
+        }
+
+        /* Adding content before section's content */
+        section::before {
+            content: "This is before heading";
+        }
+
+        /* Adding content after section's content */
+        section::after {
+            content: "This is after paragraph";
+        }
+
+        .item {
+            padding: 20px 23px;
+        }
+
+        /* Changing the style of first child of class "item" */
+        .item:first-child {
+            color: orange;
+        }
+
+        /* Changing the style of nth child (in this case 2nd child) of class "item" */
+        .item:nth-child(2) {
+            color: violet;
+        }
+
+        /* Changing the style of last child of class "item" */
+        .item:last-child {
+            color: red;
+        }
+
+        /*Changing the marker of list items. It will work when we add list items and it will change the style of number or bullets before the list content.*/
+        ::marker {
+            color: red;
+            font-size: 24px;
+        }
+
+        /*Changing the style of content selected by the user.*/
+        ::selection {
+            color: black;
+            background-color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <ul class="navigation">
+                <li>Home</li>
+                <li>About</li>
+                <li>Services</li>
+                <li>Contact</li>
+            </ul>
+        </nav>
+    </header>
+    <section>
+        <h1>Welcome to Coding World!</h1>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ullam illum tenetur aperiam enim voluptatum
+            architecto corrupti, quos in ex possimus quasi ducimus, nesciunt veritati</p>
+    </section>
+    <div class="box">
+        <div class="item">Item-1</div>
+        <div class="item">Item-2</div>
+        <div class="item">Item-3</div>
+        <div class="item">Item-4</div>
+    </div>
+</body>
+
+</html>

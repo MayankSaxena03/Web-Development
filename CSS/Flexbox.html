@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexBox</title>
+    <style>
+        /* Flexbox is a better way to align items in a container. */
+        /* Container 1 will show container flex properties. */
+        .container1 {
+            border: 3px solid black;
+            padding: 10px;
+            margin: 50px;
+            height: 600px;
+            display: flex;
+
+            /* flex direction is used to set the direction of container in which items have to be aligned. */
+            /* flex-direction: row is the default flex direction */
+            /* flex-direction: column : will set the direction of container to column and all items in the container will align vertically. */
+            /* flex-direction: row-reverse will align container items horizontally in reverse order i.e. in this case box 6 will be placed first and box 1 will be placed last. */
+            /* flex-direction: column-reverse will align container items vertically in reverse order i.e. in this case box 6 will be placed first and box 1 will be placed last. */
+
+            /* The flex-wrap CSS property sets whether flex items are forced onto one line or can wrap onto multiple lines. */
+            /* flex-wrap: wrap will allow the flex items to wrap in multiple lines when screen size is reduced. */
+            /* flex-wrap: nowrap will not allow the flex items to wrap in multiple lines when screen size is reduced. */
+
+            /* flex-direction: row; */
+            /* flex-wrap: wrap; */
+            flex-flow: row wrap; /* The above two lines of commented code can be written in a single line like this. */
+
+            /* justify-content will justify the content in horizontal direction */
+            /* justify-content: center; Aligns flex items along the main axis of the current line of the flex container. */
+            /* justify-content: space-between; Flex items are evenly distributed in the whole line.*/
+            /* justify-content: space-evenly; Align flex items with equal distance (including starting and end) to each other. */
+            /* justify-content: space-around; Align flex items with equal distance from each other but giving half the space (compared to space between flex items) in the starting and end. */
+
+            /* align-items will justify the content in vertical direction */
+            /* align-items: center; Align items to center vertically */
+            /* align-items: flex-start; Align items to the flex start. It is default property */
+            /* align-items: flex-end; Align items at flex end. (Items are packed toward the end line) */
+            /* align-items: stretch; Align items vertically with equal space between them when screen size is reduced. */
+        }
+
+        .container1-item {
+            border: 2px solid violet;
+            background-color: aqua;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        /* Container 2 will show container items flex properties. */
+        .container2 {
+            border: 3px solid black;
+            padding: 10px;
+            margin: 50px;
+            height: 600px;
+            display: flex;
+        }
+
+        .container2-item {
+            border: 2px solid rgb(252, 236, 19);
+            background-color: rgb(182, 57, 105);
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        #item-7 {
+            order: 2; /*Order will define which item will appear first in container. Item with lower order will appear before item with higher order. */
+            /* Box 9 will appear first first because of lowest order value. Box 7 will appear later and then Box 8 which has the highest order  */
+            /* flex-grow: 2; When the screen size is increased this property will allow this item to grow with twice the rate as compared to other items. We can set the growth rate as needed. */
+            /*You can notice the flex:grow property when you are increasing the screen size. This item will be bigger as compared to other items in container on a large window and will be equal to size of other items on a small window.*/
+        }
+
+        #item-8 {
+            order: 3;
+            /* flex-shrink: 2; When the screen size is decreased this property will allow this item to shrink with twice the rate as compared to other items. */
+            /*You can notice the flex:shrink property when you are reducing the screen size. This item will be smaller as compared to other items in container on a smaller window and will be equal to size of other items on a large window.*/
+        }
+
+        #item-9 {
+            order: 1;
+            flex-basis: 300px; /*It will change the width of item from 200px to 300px.*/
+            /* when flex-direction is set to row flex-basis: will control width */
+            /* when flex-direction is set to column flex-basis: will control height */
+            /* align-self: center; Align item to center vertically. */
+            /* align-self: flex-start; Align item to flex-start. It is defined by default. */
+            /* align-self: flex-end; Align items to flex-end (Bottom line of container). */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container1">
+        <div class="container1-item" id="item-1">Box 1</div>
+        <div class="container1-item" id="item-2">Box 2</div>
+        <div class="container1-item" id="item-3">Box 3</div>
+        <div class="container1-item" id="item-4">Box 4</div>
+        <div class="container1-item" id="item-5">Box 5</div>
+        <div class="container1-item" id="item-6">Box 6</div>
+    </div>
+    <div class="container2">
+        <div class="container2-item" id="item-7">Box 7</div>
+        <div class="container2-item" id="item-8">Box 8</div>
+        <div class="container2-item" id="item-9">Box 9</div>
+    </div>
+</body>
+
+</html>

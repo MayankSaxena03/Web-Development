@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Selector</title>
+    <style>
+
+        /* Element Selector is used to put css to all the same elements is HTML file. For example we will put CSS to all h1 elements */
+        h1 {
+            color: black;
+        }
+        
+        /* ID selector is used to put CSS to the element with given ID in HTML. For example we will put CSS to element with ID "paragraph1" */
+        #paragraph1 {
+            color: chartreuse;
+        }
+
+        /* Class Selector is used to put CSS to the elements with same ID in HTML. For example we will put CSS to all elements with class "redBackground" */
+        .redBackground {
+            background-color: red;
+        }
+
+        /* Grouping Selector is used to put CSS to multiple class, elements, ID at once. For example we will put CSS to span and h3 at once. */
+        span, h3 {
+            color: white;
+            background-color: black;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Hello World!</h1> <!-- Here Element Selector will apply CSS. -->
+    <p id="paragraph1">This is paragraph 1.</p> <!-- Here ID Selector will apply CSS. -->
+    <p class="redBackground">This is paragraph 2.</p> <!-- Here Class Selector will apply CSS. -->
+    <!-- On below two elements Grouping Selector will apply CSS. -->
+    <h3>This is a smaller heading.</h3>
+    <span>This is a span.</span>
+</body>
+</html>
