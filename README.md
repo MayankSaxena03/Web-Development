@@ -1,2 +1,2 @@
 # Web-Development
-Web Development tutorials for beginners.
+Web Development notes.
